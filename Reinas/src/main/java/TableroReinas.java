@@ -22,7 +22,7 @@ public class TableroReinas {
             return true;
         }
 
-        // columnas aletorias
+        // columnas aleatorias
         Integer[] columnas = new Integer[n];
         for (int i = 0; i < n; i++) {
             columnas[i] = i;
@@ -35,7 +35,7 @@ public class TableroReinas {
             columnas[j] = temp;
         }
 
-        // en cada partida sera aleatorio
+        // en cada partida será aleatorio
         for (int i = 0; i < n; i++) {
             int col = columnas[i];
 
@@ -62,6 +62,7 @@ public class TableroReinas {
     }
 
     private void imprimirSolucion() {
+        System.out.println("Solución encontrada:");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (posiciones[i] == j) {
@@ -75,8 +76,17 @@ public class TableroReinas {
     }
 
     public static void main(String[] args) {
-        int n = 8;  // Número de reinas (puedes cambiar este valor)
+        int n = 8;
         TableroReinas tableroReinas = new TableroReinas(n);
-        tableroReinas.resolver();
+
+        // se repite cada segundo
+        while (true) {
+            tableroReinas.resolver();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
