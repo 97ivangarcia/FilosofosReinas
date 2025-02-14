@@ -66,7 +66,7 @@ public class TableroReinas {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (posiciones[i] == j) {
-                    System.out.print("R ");  // Reina
+                    System.out.print("♕ ");  // Reina
                 } else {
                     System.out.print("▩ ");  // Casilla vacía
                 }
